@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #96999A;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+      <BorderPane fx:id="editPane" layoutX="10.0" layoutY="10.0" prefHeight="500.0" prefWidth="700.0" style="-fx-border-color: #000000; -fx-background-color: #96999A;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <HBox spacing="50.0" style="-fx-background-color: #96999A;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="mFreqLabel_conf" text="Max Frequency:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="daysLabel_conf" text="Days:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="dSizeLabel_conf" text="Database Size:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fileLabel_conf" text="File Name:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="4.0" left="2.0" right="2.0" top="4.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </HBox>
+         </bottom>
+         <center>
+            <VBox alignment="TOP_CENTER" onDragDetected="#synchText" spacing="26.0" style="-fx-background-color: #ccfff8;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Settings" textFill="#02979d">
+                     <effect>
+                        <InnerShadow color="#3705ff" height="15.18" radius="3.295" width="0.0" />
+                     </effect>
+                     <font>
+                        <Font size="44.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding>
+                  </Label>
+                  <HBox alignment="CENTER" spacing="16.0">
+                     <children>
+                        <Label text="Menu Length" textFill="#02979d">
+                           <font>
+                              <Font name="Chalkboard SE Regular" size="16.0" />
+                           </font></Label>
+                        <TextField fx:id="editDays" onKeyReleased="#synchSliders" />
+                     </children>
+                  </HBox>
+                  <Slider fx:id="lengthSlider" onMouseDragged="#synchText">
+                     <padding>
+                        <Insets left="200.0" right="200.0" />
+                     </padding>
+                  </Slider>
+                  <HBox alignment="CENTER" layoutX="30.0" layoutY="135.0" spacing="16.0">
+                     <children>
+                        <Label text="Max Repeat" textFill="#02979d">
+                           <font>
+                              <Font name="Chalkboard SE Regular" size="16.0" />
+                           </font></Label>
+                        <TextField fx:id="editFreq" onKeyReleased="#synchSliders" />
+                     </children>
+                  </HBox>
+                  <Slider fx:id="freqSlider" layoutX="30.0" layoutY="245.0" min="1.0" onMouseDragged="#synchText">
+                     <padding>
+                        <Insets left="200.0" right="200.0" />
+                     </padding>
+                  </Slider>
+                  <HBox alignment="CENTER" spacing="16.0">
+                     <children>
+                        <CheckBox fx:id="useDefault" mnemonicParsing="false" onAction="#defaultListener" text="Use Default Settings" textFill="#02979d">
+                           <font>
+                              <Font name="Chalkboard SE Regular" size="16.0" />
+                           </font></CheckBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" spacing="16.0">
+                     <children>
+                        <Button fx:id="editConf" mnemonicParsing="false" onAction="#changeSettings" style="-fx-background-color: #02979d;" text="Submit" textFill="#ccfff8" />
+                        <Button fx:id="editCancel" mnemonicParsing="false" onAction="#cancelMenuConfigs" style="-fx-background-color: #02979d;" text="Cancel" textFill="#ccfff8" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+         </center>
+         <left>
+            <VBox />
+         </left>
+         <top>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label text="Menu Maker" textFill="#04e7cd">
+                           <effect>
+                              <Lighting diffuseConstant="2.0" specularConstant="2.0" specularExponent="11.91" surfaceScale="0.79">
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                           <padding>
+                              <Insets left="8.0" />
+                           </padding>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <VBox alignment="CENTER" style="-fx-background-color: #a4a6a8;">
+                           <children>
+                              <Label fx:id="close_conf" onMouseClicked="#closeApp" onMouseEntered="#closeEnter_conf" onMouseExited="#closeLeave_conf" text="x">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="4.0" right="4.0" top="2.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="minimize_conf" onMouseClicked="#minimize" onMouseEntered="#minEnter_conf" onMouseExited="#minLeave_conf" text="-">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="4.0" right="4.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #02979d;">
+                     <padding>
+                        <Insets bottom="8.0" left="6.0" right="6.0" top="8.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </top>
+      </BorderPane>
+      <BorderPane fx:id="delPane" layoutX="10.0" layoutY="10.0" prefHeight="500.0" prefWidth="700.0" style="-fx-border-color: #000000; -fx-background-color: #96999A;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <HBox spacing="50.0" style="-fx-background-color: #96999A;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="mFreqLabel_del" text="Max Frequency:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="daysLabel_del" text="Days:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="dSizeLabel_del" text="Database Size:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fileLabel_del" text="File Name:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="4.0" left="2.0" right="2.0" top="4.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </HBox>
+         </bottom>
+         <center>
+            <VBox alignment="TOP_CENTER" spacing="10.0" style="-fx-background-color: #ccfff8;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Remove Dish" textFill="#02979d">
+                     <effect>
+                        <InnerShadow color="#3705ff" height="15.18" radius="3.295" width="0.0" />
+                     </effect>
+                     <font>
+                        <Font size="44.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="40.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="delField" promptText="Enter Dish Name">
+                     <VBox.margin>
+                        <Insets left="200.0" right="200.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Button fx:id="delConf" mnemonicParsing="false" onAction="#deleteDish" style="-fx-background-color: #02979d; -fx-border-color: #02979d;" text="Delete Dish" textFill="#ccfff8" />
+                  <Button fx:id="delCancel" layoutX="314.0" layoutY="172.0" mnemonicParsing="false" onAction="#cancelDeleteDish" style="-fx-background-color: #02979d; -fx-border-color: #02979d;" text="Cancel" textFill="#ccfff8" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+         </center>
+         <top>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label text="Menu Maker" textFill="#04e7cd">
+                           <effect>
+                              <Lighting diffuseConstant="2.0" specularConstant="2.0" specularExponent="11.91" surfaceScale="0.79">
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                           <padding>
+                              <Insets left="8.0" />
+                           </padding>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <VBox alignment="CENTER" style="-fx-background-color: #a4a6a8;">
+                           <children>
+                              <Label fx:id="close_del" onMouseClicked="#closeApp" onMouseEntered="#closeEnter_del" onMouseExited="#closeLeave_del" text="x">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="4.0" right="4.0" top="2.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="minimize_del" onMouseClicked="#minimize" onMouseEntered="#minEnter_del" onMouseExited="#minLeave_del" text="-">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="4.0" right="4.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #02979d;">
+                     <padding>
+                        <Insets bottom="8.0" left="6.0" right="6.0" top="8.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </top>
+         <left>
+            <VBox>
+               <children>
+                  <TextField fx:id="delSearch" onKeyReleased="#searchDelList" promptText="Search" style="-fx-background-color: #e6ffff;" VBox.vgrow="NEVER" />
+                  <ListView fx:id="delList" style="-fx-background-color: #63AAC2; -fx-control-inner-background: #9ae5e5;" BorderPane.alignment="CENTER" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </left>
+      </BorderPane>
+      <BorderPane fx:id="addPane" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="500.0" style="-fx-border-color: #000000; -fx-background-color: #96999A;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <HBox spacing="50.0" style="-fx-background-color: #96999A;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="mFreqLabel_add" text="Max Frequency:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="daysLabel_add" text="Days:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="dSizeLabel_add" text="Database Size:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fileLabel_add" text="File Name:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="4.0" left="2.0" right="2.0" top="4.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </HBox>
+         </bottom>
+         <top>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label text="Menu Maker" textFill="#04e7cd">
+                           <effect>
+                              <Lighting diffuseConstant="2.0" specularConstant="2.0" specularExponent="11.91" surfaceScale="0.79">
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                           <padding>
+                              <Insets left="8.0" />
+                           </padding>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <VBox alignment="CENTER" style="-fx-background-color: #a4a6a8;">
+                           <children>
+                              <Label fx:id="close_add" onMouseClicked="#closeApp" onMouseEntered="#closeEnter_add" onMouseExited="#closeLeave_add" text="x">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="4.0" right="4.0" top="2.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="minimize_add" onMouseClicked="#minimize" onMouseEntered="#minEnter_add" onMouseExited="#minLeave_add" text="-">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="4.0" right="4.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #02979d;">
+                     <padding>
+                        <Insets bottom="8.0" left="6.0" right="6.0" top="8.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </top>
+         <center>
+            <VBox alignment="TOP_CENTER" spacing="10.0" style="-fx-background-color: #ccfff8;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Add Dish" textFill="#02979d">
+                     <font>
+                        <Font size="44.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow color="#3705ff" height="15.18" radius="3.295" width="0.0" />
+                     </effect>
+                     <padding>
+                        <Insets bottom="40.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="addField_Name" promptText="Enter Dish Name">
+                     <VBox.margin>
+                        <Insets left="200.0" right="200.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="addField_Type" promptText="Enter Dish Category">
+                     <VBox.margin>
+                        <Insets left="200.0" right="200.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Button fx:id="addConf" mnemonicParsing="false" onAction="#addDish" style="-fx-background-color: #02979d; -fx-border-color: #02979d;" text="Add Dish" textFill="#ccfff8" />
+                  <Button fx:id="addCancel" layoutX="321.0" layoutY="209.0" mnemonicParsing="false" onAction="#cancelAddDish" style="-fx-background-color: #02979d; -fx-border-color: #02979d;" text="Cancel" textFill="#ccfff8" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+         </center>
+         <left>
+            <VBox>
+               <children>
+                  <TextField fx:id="addSearch" onKeyReleased="#searchAddList" promptText="Search" style="-fx-background-color: #e6ffff;" />
+                  <ListView fx:id="addList" style="-fx-background-color: #63AAC2; -fx-control-inner-background: #9ae5e5;" BorderPane.alignment="CENTER" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </left>
+      </BorderPane>
+        <BorderPane fx:id="homePane" layoutX="200.0" layoutY="100.0" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: #000000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <VBox BorderPane.alignment="CENTER">
+                    <children>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Label text="Menu Maker" textFill="#04e7cd">
+                                    <font>
+                                        <Font size="40.0" />
+                                    </font>
+                                    <effect>
+                                        <Lighting diffuseConstant="2.0" specularConstant="2.0" specularExponent="11.91" surfaceScale="0.79">
+                                            <bumpInput>
+                                                <Shadow />
+                                            </bumpInput>
+                                            <light>
+                                                <Light.Distant />
+                                            </light>
+                                        </Lighting>
+                                    </effect>
+                                    <padding>
+                                        <Insets left="8.0" />
+                                    </padding>
+                                </Label>
+                                <Region HBox.hgrow="ALWAYS" />
+                                <VBox alignment="CENTER" style="-fx-background-color: #a4a6a8;">
+                                    <children>
+                                        <Label fx:id="close" onMouseClicked="#closeApp" onMouseEntered="#closeEnter" onMouseExited="#closeLeave" text="x">
+                                            <padding>
+                                                <Insets left="4.0" right="4.0" top="2.0" />
+                                            </padding>
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="minimize" onMouseClicked="#minimize" onMouseEntered="#minEnter" onMouseExited="#minLeave" text="-">
+                                            <padding>
+                                                <Insets left="4.0" right="4.0" />
+                                            </padding>
+                                            <font>
+                                                <Font size="22.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #02979d;">
+                            <children>
+                                <MenuButton mnemonicParsing="false" style="-fx-background-color: #02979d;" text="Options">
+                                    <items>
+                                        <MenuItem fx:id="addDishItem" mnemonicParsing="false" onAction="#menuAddDish" text="Add Dish" />
+                                        <MenuItem fx:id="delDishItem" mnemonicParsing="false" onAction="#menuDeleteDish" text="Remove Dish" />
+                              <MenuItem fx:id="configItem" mnemonicParsing="false" onAction="#menuConfigs" text="Edit Configurations" />
+                              <MenuItem mnemonicParsing="false" onAction="#closeApp" text="Close" />
+                                    </items>
+                                </MenuButton>
+                        <Button fx:id="createMenu" mnemonicParsing="false" onAction="#getMenu" style="-fx-background-color: #02979d;" text="Create Menu" />
+                        <Button mnemonicParsing="false" onAction="#getJoke" style="-fx-background-color: #02979d;" text="Tell Me A Joke!" />
+                            </children>
+                            <padding>
+                                <Insets bottom="8.0" left="6.0" right="6.0" top="8.0" />
+                            </padding>
+                        </HBox>
+                    </children>
+                </VBox>
+            </top>
+            <left>
+            <VBox style="-fx-text-alignment: center;">
+               <children>
+                  <TextField fx:id="mainSearch" onKeyReleased="#searchDishList" promptText="Search" style="-fx-background-color: #e6ffff;" VBox.vgrow="NEVER" />
+                      <ListView fx:id="dishList" onMouseClicked="#displaySelect" style="-fx-background-color: #63AAC2; -fx-control-inner-background: #9ae5e5;" BorderPane.alignment="CENTER" VBox.vgrow="ALWAYS" />
+                  <HBox spacing="1.0" style="-fx-background-color: #a4a6a8;" VBox.vgrow="NEVER">
+                     <children>
+                        <Label fx:id="addLabel" onMouseClicked="#menuAddDish" onMouseEntered="#addEnter" onMouseExited="#addLeave" text="+" textAlignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets left="4.0" right="4.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="delLabel" onMouseClicked="#menuDeleteDish" onMouseEntered="#delEnter" onMouseExited="#delLeave" text="-" textAlignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets left="6.0" right="6.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="2.0" left="1.0" top="2.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+            </left>
+            <center>
+                <TextArea fx:id="display" editable="false" style="-fx-control-inner-background: #b3cce6; -fx-text-alignment: center;" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Chalkboard Bold" size="18.0" />
+               </font></TextArea>
+            </center>
+            <bottom>
+                <HBox spacing="50.0" style="-fx-background-color: #96999A;" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label fx:id="mFreqLabel" text="Max Frequency:">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <font>
+                        <Font size="15.0" />
+                     </font></Label>
+                  <Label fx:id="daysLabel" text="Days:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="dSizeLabel" text="Database Size:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fileLabel" text="File Name:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                    </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets bottom="4.0" left="2.0" right="2.0" top="4.0" />
+               </padding>
+                </HBox>
+            </bottom>
+        </BorderPane>
+    </children>
+</AnchorPane>
