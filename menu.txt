@@ -1,0 +1,62 @@
+Bean burritos*Mexican
+Spinach and artichoke*Italian
+Creamy potato soup*Soup
+Gyoza*Asian
+Chicken salad sandwiches*Normal
+Shepherd’s pie*Casserole
+Navajo tacos*Mexican
+Calzones*Italian
+Chicken parmesan casserole*Casserole
+Biscuits and gravy*Breakfast
+Breakfast ring*Breakfast
+Pot pie*Casserole
+Hamburger casserole*Casserole
+Pulled pork burritos*Mexican
+Enchilada soup*Soup
+Pigs in a blanket*Normal
+Steak*Normal
+Lemon chicken and noodles*Normal
+Egg drop soup*Soup
+Chicken and rice soup*Soup
+Potatoes, ham, and green beans*Normal
+Macaroni and cheese*Normal
+White chili soup*Soup
+Chicken and gnocchi soup*Soup
+San shoku gohan*Asian
+Tacos*Mexican
+Lasagna rollups*Italian
+French dipped sandwiches*Normal
+Baked potatoes*Normal
+Marinated Chicken*Asian
+Stir fry*Asian
+Fettuccini alfredo*Italian
+Chicken crescent rollups*Normal
+Fleisch*European
+Tortellini soup*Soup
+Hawaiian meatballs*Normal
+Pesto chicken*Italian
+Pot roast*Crockpot
+Chicken schnitzel*European
+Fajitas*Mexican
+Pea soup*Soup
+Spaghetti*Italian
+Chicken spaghetti*Italian
+Indian curry*Asian
+Fried rice*Asian
+Creamy chicken and rice*Crockpot
+Breakfast burritos*Breakfast
+Chicken parmesan*Italian
+Chicken tetrazzini*Normal
+Potato soup*Soup
+Enchiladas*Mexican
+Pasta salad*Normal
+Tinfoil dinner*Normal
+Lasagna*Italian
+Raviolis*Italian
+Naan bread pizza*Italian
+Beef stroganoff*European
+Fried ham and potatoes*Normal
+Chicken teriyaki*Asian
+Chicken satay*Asian
+Taco soup*Soup
+Chicken noodle soup*Soup
