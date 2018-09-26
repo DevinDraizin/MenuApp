@@ -17,9 +17,6 @@ class dish
     String type;
     String name;
 
-    //This is a constructor, this is for when you want to
-    //actually create a dish you can do something like
-    //dish my_new_dish = new dish(taco,mexican);
     dish(String type, String name)
     {
         this.type = type;
@@ -30,18 +27,11 @@ class dish
 
 public class fileHandler {
 
-    //Here we are creating an array or 'list'
-    // the things in <> are the data type its
-    //storing. So for example menu is an array
-    //of dishes.
     ArrayList<dish> table = new ArrayList();
     ArrayList<dish> menu = new ArrayList();
     ArrayList<String> arr = new ArrayList<>();
 
 
-    //These be the variables for days and max freq currently initialized
-    //to their default values. (this is janky, they shouldnt be hard
-    //coded like this but idc I made it and it works)
     int days = 7;
 
 
@@ -246,8 +236,6 @@ public class fileHandler {
 
 
     //Fisher Yates Modern shuffle algorithm
-    //im not explaining how this works in
-    //comments, look it up....
     void shuffleArray() {
         Random random = new Random();
 
@@ -321,7 +309,6 @@ public class fileHandler {
     //Joke stuff*****************************************************************************
 
 
-    //This method is gonna be stupid long because it will store random jokes ;-;
     String getJoke() {
         int next;
 
@@ -333,8 +320,7 @@ public class fileHandler {
     }
 
 
-    //This is such a bad thing to do but im gonna do it anyway
-    //because I can.
+    //Don't judge
     void initJokes() {
 
         arr.add("People don't get my puns. They think they're funny.");
@@ -416,7 +402,6 @@ public class fileHandler {
         arr.add("Why was Cinderella thrown off the basketball team?\nShe ran away from the ball.");
         arr.add("There is a new trend in our office; everyone is putting\nnames on their food. I saw it today, while I was eating a sandwich named Kevin.");
 
-        //I regret this so much, this took so long to format ;-;
 
     }
 

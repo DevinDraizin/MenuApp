@@ -103,8 +103,6 @@ public class Controller {
         if(useDefault.isSelected())
         {
 
-            //im sorry for hard coding this but
-            //its happening so deal with it
             food.days = 7;
             food.maxFreq = 3;
 
